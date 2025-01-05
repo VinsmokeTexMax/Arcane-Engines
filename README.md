@@ -15,7 +15,7 @@
 ## 🚀 Instalación
 1. Clona el repositorio:
 	```bash
-	git clone https://github.com/usuario/arcane-engines.git
+	git clone https://github.com/VinsmokeTexMax/Arcane-Engines.git
 	```
 2. Abre el proyecto en Godot:
 	- Descarga e instala [Godot](https://godotengine.org/download).
