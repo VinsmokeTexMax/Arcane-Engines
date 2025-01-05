@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://divj3xwsywif0"]
+
+[ext_resource type="PackedScene" uid="uid://o00uqqefs2hb" path="res://test/character_test.tscn" id="4_e7kdv"]
+[ext_resource type="PackedScene" uid="uid://bdd37ncpbledf" path="res://test/test_zone.tscn" id="5_byetd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ybxby"]
+
+[sub_resource type="Sky" id="Sky_ciidr"]
+sky_material = SubResource("ProceduralSkyMaterial_ybxby")
+
+[sub_resource type="Environment" id="Environment_vvdqy"]
+background_mode = 2
+sky = SubResource("Sky_ciidr")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 2
+fog_light_color = Color(0.647876, 0.545021, 0.51323, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0986
+volumetric_fog_albedo = Color(0.63722, 0.39783, 1.05888e-06, 1)
+volumetric_fog_gi_inject = 0.31
+
+[node name="MainScene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.5, -0.612372, 0.612372, 0, 0.707107, 0.707107, -0.866025, 0.353553, -0.353553, 0, 0, 0)
+light_color = Color(1, 1, 0.8, 1)
+shadow_enabled = true
+directional_shadow_mode = 0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vvdqy")
+
+[node name="CharacterTest" parent="." instance=ExtResource("4_e7kdv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.20079, 0)
+
+[node name="TestZone" parent="." instance=ExtResource("5_byetd")]
